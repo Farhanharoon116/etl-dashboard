@@ -670,7 +670,7 @@ if is_weather:
             }).style.format({
                 "Min °":"{:.1f}","Max °":"{:.1f}","Avg °":"{:.1f}",
                 "Humidity":"{:.0f}%","Wind m/s":"{:.1f}","Rain Prob":"{:.0%}","Range":"{:.1f}",
-            }).background_gradient(subset=["Max °"], cmap="RdYlBu_r"),
+            }),
             use_container_width=True, hide_index=True,
         )
 
