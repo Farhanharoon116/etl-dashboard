@@ -20,7 +20,7 @@ The app is designed with a clean modular architecture, server-side API key manag
 
 ## Live Demo
 
-🔗 **[datapulse.streamlit.app](https://farhanharoon116-etl-dashboard.streamlit.app)**
+🔗 **[datapulse.streamlit.app](https://etl-dashboard-new.streamlit.app)**
 
 ---
 
