@@ -12,7 +12,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-from config import OPENWEATHER_API_KEY, ALPHAVANTAGE_API_KEY
+# Keys loaded below after st is imported
 from api_client import WeatherClient, FinanceClient
 from etl import WeatherETL, FinanceETL
 from analysis import WeatherAnalysis, FinanceAnalysis
@@ -27,6 +27,20 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# ─────────────────────────────────────────────────────────────
+# API KEYS — reads from Streamlit Cloud secrets or local config
+# ─────────────────────────────────────────────────────────────
+try:
+    OPENWEATHER_API_KEY  = st.secrets["OPENWEATHER_API_KEY"]
+    ALPHAVANTAGE_API_KEY = st.secrets["ALPHAVANTAGE_API_KEY"]
+except Exception:
+    try:
+        from config import OPENWEATHER_API_KEY, ALPHAVANTAGE_API_KEY
+    except ImportError:
+        OPENWEATHER_API_KEY  = ""
+        ALPHAVANTAGE_API_KEY = ""
+
 
 # ─────────────────────────────────────────────────────────────
 # GLOBAL CSS — Glassmorphism + Gradient Theme
